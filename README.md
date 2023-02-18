@@ -12,48 +12,39 @@ you are using isn't some ancient crap from 1970s...
 First three items in my list are the most important ones.
 Terminal emulator, shell and editor.
 
-## Terminal Emulator - Wezterm 📟
+## Terminal Emulator - Alacritty 🔥
 
-**[Site](https://wezfurlong.org/wezterm/)** | **[Github](https://github.com/wez/wezterm)**
+**[Site](https://alacritty.org/)** | **[Github](https://github.com/alacritty/alacritty)**
 
-> A GPU-accelerated cross-platform terminal emulator and multiplexer 
+> A fast, cross-platform, OpenGL terminal emulator
 
-- Rich Lua configuration. It's probably the most customizable terminal emulator.
-- Fast (well, not as fast as [Alacritty](https://alacritty.org/), but still good)
-- Tab support, built-in multiplexer
+The fastest, actually.
 
-![tabs](https://user-images.githubusercontent.com/62389790/215746711-bc7abab9-97e7-4e67-9426-e612a885a17a.png)
+You probably know about Alacritty already, but here's the thing I discovered
+which made me went back to using it once again after trying [Wezterm](https://wezfurlong.org/wezterm/)
+(it's awesome, but slow for me...) - it *does* support tabs. But it can be tricky.
 
-Why native tab support matters?
-Why not just use [tmux](https://github.com/tmux/tmux/wiki)
-or [zellij](https://github.com/zellij-org/zellij)?
+<details>
+<summary>How to use tabs in Alacritty</summary>
 
-As explained [here](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745)
+Since I use macOS (eghh) I'll describe a method for it.
 
-> Multiplexers add unnecessary overhead, suffer from a complexity cascade,
-> because they actually have to *translate* escape codes, modifying them
-> in hackish ways to get them to work with their concepts of
-> windows/sessions.
->
-> Energy/performance wise they are poison, every byte has to be parsed
-> twice, once by the middleman and once by the terminal. And they act as a
-> drag on the ecosystem as a whole, making it very hard to get any new
-> features. Designing features becomes harder because you have to design
-> for compatibility with a horrible hack and the diffusion into the
-> ecosystem tends to get gated by basically a handful of individuals with,
-> let's say, very limited vision.
+1. System Settings > Desktop & Dock > Prefer tabs when opening documents > Always
+2. Add this bind to your `alacritty.yml`
 
-And I totally agree with it.
-It's *should* be a terminal job to have this functionality.
-It *does* feel noticeably slower each time I try to use terminal multiplexers.
-Very, veryyy slow. Even with [zellij](https://github.com/zellij-org/zellij),
-which is supposed to be faster, than tmux.
+```yaml
+key_bindings:
+- action: CreateNewWindow
+  key: T
+  mods: Command
+```
 
-In my opinion, the only valid use-case terminal multiplexers have is for using them
-over ssh. Period.
+3. Tada! 🎉 You can use <kbd>⌘ + T</kbd> to spawn a new tab.
 
-I would also recommend [kitty terminal](https://sw.kovidgoyal.net/kitty/).
-I use it instead of wezterm from time to time.
+> On Linux with X11 you can use something like `tabbed alacritty --embed`.
+> Idk about Wayland...
+
+</details>
 
 ## Shell - Nushell 🐚
 

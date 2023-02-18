@@ -25,43 +25,35 @@ as it's not <em>javascript</em> 💀, but it's just nice to know that what
 you are using isn't some ancient crap from 1970s...</p>
 <p>First three items in my list are the most important ones.
 Terminal emulator, shell and editor.</p>
-<h2>Terminal Emulator - Wezterm 📟</h2>
-<p><strong><a href="https://wezfurlong.org/wezterm/">Site</a></strong> | <strong><a href="https://github.com/wez/wezterm">Github</a></strong></p>
+<h2>Terminal Emulator - Alacritty 🔥</h2>
+<p><strong><a href="https://alacritty.org/">Site</a></strong> | <strong><a href="https://github.com/alacritty/alacritty">Github</a></strong></p>
 <blockquote>
-<p>A GPU-accelerated cross-platform terminal emulator and multiplexer</p>
+<p>A fast, cross-platform, OpenGL terminal emulator</p>
 </blockquote>
-<ul>
-<li>Rich Lua configuration. It's probably the most customizable terminal emulator.</li>
-<li>Fast (well, not as fast as <a href="https://alacritty.org/">Alacritty</a>, but still good)</li>
-<li>Tab support, built-in multiplexer</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/62389790/215746711-bc7abab9-97e7-4e67-9426-e612a885a17a.png" alt="tabs" /></p>
-<p>Why native tab support matters?
-Why not just use <a href="https://github.com/tmux/tmux/wiki">tmux</a>
-or <a href="https://github.com/zellij-org/zellij">zellij</a>?</p>
-<p>As explained <a href="https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745">here</a></p>
+<p>The fastest, actually.</p>
+<p>You probably know about Alacritty already, but here's the thing I discovered
+which made me went back to using it once again after trying <a href="https://wezfurlong.org/wezterm/">Wezterm</a>
+(it's awesome, but slow for me...) - it <em>does</em> support tabs. But it can be tricky.</p>
+<details>
+<summary>How to use tabs in Alacritty</summary>
+<p>Since I use macOS (eghh) I'll describe a method for it.</p>
+<ol>
+<li>System Settings &gt; Desktop &amp; Dock &gt; Prefer tabs when opening documents &gt; Always</li>
+<li>Add this bind to your <code>alacritty.yml</code></li>
+</ol>
+<pre><code class="language-yaml">key_bindings:
+- action: CreateNewWindow
+  key: T
+  mods: Command
+</code></pre>
+<ol start="3">
+<li>Tada! 🎉 You can use <kbd>⌘ + T</kbd> to spawn a new tab.</li>
+</ol>
 <blockquote>
-<p>Multiplexers add unnecessary overhead, suffer from a complexity cascade,
-because they actually have to <em>translate</em> escape codes, modifying them
-in hackish ways to get them to work with their concepts of
-windows/sessions.</p>
-<p>Energy/performance wise they are poison, every byte has to be parsed
-twice, once by the middleman and once by the terminal. And they act as a
-drag on the ecosystem as a whole, making it very hard to get any new
-features. Designing features becomes harder because you have to design
-for compatibility with a horrible hack and the diffusion into the
-ecosystem tends to get gated by basically a handful of individuals with,
-let's say, very limited vision.</p>
+<p>On Linux with X11 you can use something like <code>tabbed alacritty --embed</code>.
+Idk about Wayland...</p>
 </blockquote>
-<p>And I totally agree with it.
-It's <em>should</em> be a terminal job to have this functionality.
-It <em>does</em> feel noticeably slower each time I try to use terminal multiplexers.
-Very, veryyy slow. Even with <a href="https://github.com/zellij-org/zellij">zellij</a>,
-which is supposed to be faster, than tmux.</p>
-<p>In my opinion, the only valid use-case terminal multiplexers have is for using them
-over ssh. Period.</p>
-<p>I would also recommend <a href="https://sw.kovidgoyal.net/kitty/">kitty terminal</a>.
-I use it instead of wezterm from time to time.</p>
+</details>
 <h2>Shell - Nushell 🐚</h2>
 <p><strong><a href="https://www.nushell.sh/">Site</a></strong> | <strong><a href="https://github.com/nushell/nushell">Github</a></strong></p>
 <blockquote>

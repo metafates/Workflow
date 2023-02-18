@@ -1,7 +1,5 @@
-
-Gign made this.
-https://github.com/metafates/gign
-
+*.html
+!index.html
 
 #########
 # macOS #
