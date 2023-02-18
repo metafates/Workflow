@@ -1,45 +1,70 @@
 # Workflow 🦋
 
 An opinionated list of programs I use everyday. 
-Most of them are better alternatives to the default ones. (e.g. `ripgrep` instead of `grep`).
+Most of them are better alternatives to the default ones.
+(e.g. `ripgrep` instead of `grep`).
 
 Majority of them (if not all) are written in **Rust 🦀**.
-Of course it doesn't matter what language the program is written on as long as it's not *javascript* 💀,
-but it's just nice to know that what you are using isn't some ancient crap from 1970s...
+Of course it doesn't matter which language the program is written on as long
+as it's not *javascript* 💀, but it's just nice to know that what
+you are using isn't some ancient crap from 1970s...
 
-## Table of Contents
+First three items in my list are the most important ones.
+Terminal emulator, shell and editor.
 
-<!--toc:start-->
-  - [Table of Contents](#table-of-contents)
-  - [Nushell 🐚](#nushell-🐚)
-  - [Helix 🧬](#helix-🧬)
-  - [Tools](#tools)
-    - [ripgrep 🪦](#ripgrep-🪦)
-    - [bat 🦇](#bat-🦇)
-    - [fd 🔍](#fd-🔍)
-    - [skim 🔭](#skim-🔭)
-    - [zoxide 🐇](#zoxide-🐇)
-    - [exa 📁](#exa-📁)
-    - [sd 📝](#sd-📝)
-    - [rargs 🤹](#rargs-🤹)
-  - [Misc](#misc)
-    - [Starship 🚀](#starship-🚀)
-    - [Delta 💬](#delta-💬)
-    - [Tealdeer 🦌](#tealdeer-🦌)
-    - [Marky 🏭](#marky-🏭)
-    - [Gign ⚙️](#gign-️)
-<!--toc:end-->
+## Terminal Emulator - Wezterm 📟
 
+**[Site](https://wezfurlong.org/wezterm/)** | **[Github](https://github.com/wez/wezterm)**
 
-## Nushell 🐚
+> A GPU-accelerated cross-platform terminal emulator and multiplexer 
+
+- Rich Lua configuration. It's probably the most customizable terminal emulator.
+- Fast (well, not as fast as [Alacritty](https://alacritty.org/), but still good)
+- Tab support, built-in multiplexer
+
+Why native tab support matters?
+Why not just use [tmux](https://github.com/tmux/tmux/wiki)
+or [zellij](https://github.com/zellij-org/zellij)?
+
+As explained [here](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745)
+
+> Multiplexers add unnecessary overhead, suffer from a complexity cascade,
+> because they actually have to *translate* escape codes, modifying them
+> in hackish ways to get them to work with their concepts of
+> windows/sessions.
+>
+> Energy/performance wise they are poison, every byte has to be parsed
+> twice, once by the middleman and once by the terminal. And they act as a
+> drag on the ecosystem as a whole, making it very hard to get any new
+> features. Designing features becomes harder because you have to design
+> for compatibility with a horrible hack and the diffusion into the
+> ecosystem tends to get gated by basically a handful of individuals with,
+> let's say, very limited vision.
+
+And I totally agree with it.
+It's *should* be a terminal job to have this functionality.
+It *does* feel noticeably slower each time I try to use terminal multiplexers.
+Very, veryyy slow. Even with [zellij](https://github.com/zellij-org/zellij),
+which is supposed to be faster, than tmux.
+
+In my opinion, the only valid use-case terminal multiplexers have is for using them
+over ssh. Period.
+
+I would also recommend [kitty terminal](https://sw.kovidgoyal.net/kitty/).
+I use it instead of wezterm from time to time.
+
+## Shell - Nushell 🐚
 
 **[Site](https://www.nushell.sh/)** | **[Github](https://github.com/nushell/nushell)**
 
-> Nu pipelines use structured data so you can safely select, filter, and sort the same way every time. *Stop parsing strings and start solving problems.*
+> Nu pipelines use structured data so you can safely select, filter,
+> and sort the same way every time.
+> *Stop parsing strings and start solving problems.*
 
 This example is pretty self-descriptive
 
 ```nu
+# All these commands are built-in with nushell. Yes, even http.
 ls | where size > 10mb | sort-by modified
 http get https://api.github.com/repos/nushell/nushell | get license
 ```
@@ -53,24 +78,25 @@ From the article [Shells are Two things](https://borretti.me/article/shells-are-
 >
 > And you can’t do both. You can’t be explicit and implicit, you can’t be terse and readable, you can’t be flexible and robust.
 
-Yet, Nushell managed to do both pretty well.
+Yet, Nushell managed to do *both* pretty well.
 It's explicit and implicit, terse and readable, flexible and robust.
 
-And, of courseeeeeee it's written in a modern-language 🦀,
-and not some spaghetti disaster like C ***IMHO***
- ## Helix 🧬
+ ## Editor - Helix 🧬
 
 **[Site](https://helix-editor.com/)** | **[Github](https://github.com/helix-editor/helix)**
 
 > A post-modern modal text editor
 
 **(N)vim** alternative.
-Tree-sitter integration, multiple selections, lsp support, many features built-in.
+Tree-sitter integration, multiple selections, lsp support,
+many features built-in.
 
-It **doesn't** support plugins *(yet)*, but 8/10 plugin use-cases are already natively implemented.
-It feels way more responsive than (n)vim. Once you try it you can't go back 🤯
+It **doesn't** support plugins *[(yet)](https://github.com/helix-editor/helix/discussions/3806#discussioncomment-4404346)*, but 8/10 plugin
+use-cases are already natively implemented. It feels way more responsive
+than (n)vim. Once you try it you can't go back 🤯
 
-And it requires almost no config at all, everything works (and works nice) out of the box!
+And it requires almost no config at all, everything works (and works well)
+out of the box!
 
 ## Tools
 
@@ -79,9 +105,9 @@ And it requires almost no config at all, everything works (and works nice) out o
 **[Github](https://github.com/BurntSushi/ripgrep)**
 
 A better grep alternative.
-It's faster, smarter and easier.
-Unlike GNU grep, ripgrep stays fast while supporting Unicode (which is always on).
-Ripgrep also supports different regex engines, such as PCRE2
+It's faster, smarter and easier. Unlike GNU grep, ripgrep stays fast
+while supporting Unicode (which is always on). Ripgrep also supports
+different regex engines, such as PCRE2
 
 
 ```bash
@@ -170,10 +196,10 @@ env_change: {
 
 > A modern replacement for `ls`. 
 
-It's richer than ls (e.g. `git` integration), supports icons and faster, of course.
+It's richer than ls (e.g. `git` integration), supports icons and colors.
 
-Thought, I don't use that much since I use nushell and it has a better `cd` built-in.
-But that's what was my go-to choice before.
+Thought, I don't use it that much since I use nushell and it has a better
+`cd` built-in. But that's what was my go-to choice before.
 
 ```bash
 # print files in the cwd with icons
@@ -216,8 +242,8 @@ cat download-list.csv | rargs -p '(?P<url>.*),(?P<filename>.*)' wget {url} -O {f
 
 > The minimal, blazing-fast, and infinitely customizable prompt for any shell! 
 
-It's looks very nice by default
-and provides pretty useful information in a nice format.
+It's looks very nice by default and provides pretty
+useful information in a compact format.
 
 ### Delta 💬
 
@@ -245,7 +271,7 @@ tldr tar
 
 > Convert Markdown documents into themed HTML pages with support for code syntax highlighting, LaTeX and Mermaid diagrams. 
 
-This is my own app that I use very often.
+This is my own app that I use very often when working with markdown documents.
 
 ```bash
 marky README.md
@@ -257,8 +283,8 @@ marky README.md
 
 > A cute .gitignore generator
 
-Another app that I developed.
-It allows to generate `.gitignore` files efficiently.
+Another app that I developed. It allows to generate `.gitignore` files
+efficiently by using community defined templates.
 
 ```bash
 # would generate a predefined gitignore template
