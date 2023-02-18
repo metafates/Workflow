@@ -22,6 +22,8 @@ Terminal emulator, shell and editor.
 - Fast (well, not as fast as [Alacritty](https://alacritty.org/), but still good)
 - Tab support, built-in multiplexer
 
+![tabs](https://user-images.githubusercontent.com/62389790/215746711-bc7abab9-97e7-4e67-9426-e612a885a17a.png)
+
 Why native tab support matters?
 Why not just use [tmux](https://github.com/tmux/tmux/wiki)
 or [zellij](https://github.com/zellij-org/zellij)?
@@ -61,6 +63,8 @@ I use it instead of wezterm from time to time.
 > and sort the same way every time.
 > *Stop parsing strings and start solving problems.*
 
+<img width="775" alt="miette-example" src="https://user-images.githubusercontent.com/62389790/219864858-f93b9c14-b352-4d87-9298-e3390ec8b22d.png">
+
 This example is pretty self-descriptive
 
 ```nu
@@ -86,6 +90,8 @@ It's explicit and implicit, terse and readable, flexible and robust.
 **[Site](https://helix-editor.com/)** | **[Github](https://github.com/helix-editor/helix)**
 
 > A post-modern modal text editor
+
+![screenshot](https://user-images.githubusercontent.com/62389790/219864951-1fbb233d-dfdb-4bab-9394-0faa4d935a3a.png)
 
 **(N)vim** alternative.
 Tree-sitter integration, multiple selections, lsp support,
@@ -122,9 +128,7 @@ rg pattern file
 
 Syntax highlighting, better pager and faster.
 
-```bash
-bat test.md
-```
+![bat example](https://user-images.githubusercontent.com/62389790/219865017-340cf33e-cedb-4290-b841-89b385643181.png)
 
 ### fd 🔍
 
@@ -201,10 +205,7 @@ It's richer than ls (e.g. `git` integration), supports icons and colors.
 Thought, I don't use it that much since I use nushell and it has a better
 `cd` built-in. But that's what was my go-to choice before.
 
-```bash
-# print files in the cwd with icons
-exa --icons
-```
+<img width="558" alt="Exa" src="https://user-images.githubusercontent.com/62389790/219865067-659d41c0-6ced-4485-ae94-dc3630af5278.png">
 
 ### sd 📝
 
@@ -245,11 +246,15 @@ cat download-list.csv | rargs -p '(?P<url>.*),(?P<filename>.*)' wget {url} -O {f
 It's looks very nice by default and provides pretty
 useful information in a compact format.
 
+![starship](https://user-images.githubusercontent.com/62389790/219865120-99134d75-c4fa-447c-93a4-74f7e87271d4.gif)
+
 ### Delta 💬
 
 **[Github](https://github.com/dandavison/delta)**
 
 > A syntax-highlighting pager for git, diff, and grep output
+
+![delta](https://user-images.githubusercontent.com/62389790/219865157-13b3aa72-0ad3-457b-8e34-a5ddf5f5224d.png)
 
 ### Tealdeer 🦌
 
@@ -261,9 +266,7 @@ What **tldr** is? [Visit the site](https://tldr.sh/)
 
 > Collaborative cheatsheets for console commands 
 
-```bash
-tldr tar
-```
+<img width="537" alt="tldr example with tar" src="https://user-images.githubusercontent.com/62389790/219865208-9de2f467-5a6c-48c5-a84f-f7e909dfa7ab.png">
 
 ### Marky 🏭
 
