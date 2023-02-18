@@ -21,8 +21,13 @@ but it's just nice to know that what you are using isn't some ancient crap from 
     - [zoxide 🐇](#zoxide-🐇)
     - [exa 📁](#exa-📁)
     - [sd 📝](#sd-📝)
+    - [rargs 🤹](#rargs-🤹)
   - [Misc](#misc)
     - [Starship 🚀](#starship-🚀)
+    - [Delta 💬](#delta-💬)
+    - [Tealdeer 🦌](#tealdeer-🦌)
+    - [Marky 🏭](#marky-🏭)
+    - [Gign ⚙️](#gign-️)
 <!--toc:end-->
 
 
@@ -193,6 +198,16 @@ sd '\n' ','
 sed ':a;N;$!ba;s/\n/,/g' # what is this syntax, seriously...
 ```
 
+### rargs 🤹
+
+**[Github](https://github.com/lotabout/rargs)**
+
+> xargs + awk with pattern matching support.
+
+```bash
+cat download-list.csv | rargs -p '(?P<url>.*),(?P<filename>.*)' wget {url} -O {filename}
+```
+
 ## Misc
 
 ### Starship 🚀
@@ -203,6 +218,26 @@ sed ':a;N;$!ba;s/\n/,/g' # what is this syntax, seriously...
 
 It's looks very nice by default
 and provides pretty useful information in a nice format.
+
+### Delta 💬
+
+**[Github](https://github.com/dandavison/delta)**
+
+> A syntax-highlighting pager for git, diff, and grep output
+
+### Tealdeer 🦌
+
+**[Github](https://github.com/dbrgn/tealdeer)**
+
+> A very fast implementation of tldr in Rust. 
+
+What **tldr** is? [Visit the site](https://tldr.sh/)
+
+> Collaborative cheatsheets for console commands 
+
+```bash
+tldr tar
+```
 
 ### Marky 🏭
 
@@ -230,3 +265,4 @@ It allows to generate `.gitignore` files efficiently.
 # for macOS, JetBrains IDE and python
 gign --append macos jetbrains python
 ```
+

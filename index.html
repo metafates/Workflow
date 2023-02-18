@@ -36,11 +36,16 @@ but it's just nice to know that what you are using isn't some ancient crap from 
 <li><a href="#zoxide-%F0%9F%90%87">zoxide 🐇</a></li>
 <li><a href="#exa-%F0%9F%93%81">exa 📁</a></li>
 <li><a href="#sd-%F0%9F%93%9D">sd 📝</a></li>
+<li><a href="#rargs-%F0%9F%A4%B9">rargs 🤹</a></li>
 </ul>
 </li>
 <li><a href="#misc">Misc</a>
 <ul>
 <li><a href="#starship-%F0%9F%9A%80">Starship 🚀</a></li>
+<li><a href="#delta-%F0%9F%92%AC">Delta 💬</a></li>
+<li><a href="#tealdeer-%F0%9F%A6%8C">Tealdeer 🦌</a></li>
+<li><a href="#marky-%F0%9F%8F%AD">Marky 🏭</a></li>
+<li><a href="#gign-%EF%B8%8F">Gign ⚙️</a></li>
 </ul>
 </li>
 </ul>
@@ -160,14 +165,21 @@ exa --icons
 <blockquote>
 <p>Intuitive find &amp; replace CLI (sed alternative).</p>
 </blockquote>
-<p>Not only it's easier, it's also just faster (of course it is)!</p>
+<p>It's just easier and more intuitive.</p>
 <pre><code class="language-bash"># Simpler syntax for replacing all occurrences 
 sd before after
 sed s/before/after/g
 
 # Replace newlines with commas
 sd '\n' ','
-sed ':a;N;$!ba;s/\n/,/g'
+sed ':a;N;$!ba;s/\n/,/g' # what is this syntax, seriously...
+</code></pre>
+<h3>rargs 🤹</h3>
+<p><strong><a href="https://github.com/lotabout/rargs">Github</a></strong></p>
+<blockquote>
+<p>xargs + awk with pattern matching support.</p>
+</blockquote>
+<pre><code class="language-bash">cat download-list.csv | rargs -p '(?P&lt;url&gt;.*),(?P&lt;filename&gt;.*)' wget {url} -O {filename}
 </code></pre>
 <h2>Misc</h2>
 <h3>Starship 🚀</h3>
@@ -177,6 +189,22 @@ sed ':a;N;$!ba;s/\n/,/g'
 </blockquote>
 <p>It's looks very nice by default
 and provides pretty useful information in a nice format.</p>
+<h3>Delta 💬</h3>
+<p><strong><a href="https://github.com/dandavison/delta">Github</a></strong></p>
+<blockquote>
+<p>A syntax-highlighting pager for git, diff, and grep output</p>
+</blockquote>
+<h3>Tealdeer 🦌</h3>
+<p><strong><a href="https://github.com/dbrgn/tealdeer">Github</a></strong></p>
+<blockquote>
+<p>A very fast implementation of tldr in Rust.</p>
+</blockquote>
+<p>What <strong>tldr</strong> is? <a href="https://tldr.sh/">Visit the site</a></p>
+<blockquote>
+<p>Collaborative cheatsheets for console commands</p>
+</blockquote>
+<pre><code class="language-bash">tldr tar
+</code></pre>
 <h3>Marky 🏭</h3>
 <p><strong><a href="https://github.com/metfates/marky">Github</a></strong></p>
 <blockquote>
@@ -192,7 +220,9 @@ and provides pretty useful information in a nice format.</p>
 </blockquote>
 <p>Another app that I developed.
 It allows to generate <code>.gitignore</code> files efficiently.</p>
-<pre><code class="language-bash">gign --append macos jetbrains python
+<pre><code class="language-bash"># would generate a predefined gitignore template
+# for macOS, JetBrains IDE and python
+gign --append macos jetbrains python
 </code></pre>
 
   </main>
