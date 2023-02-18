@@ -53,8 +53,7 @@ It's explicit and implicit, terse and readable, flexible and robust.
 
 And, of courseeeeeee it's written in a modern-language 🦀,
 and not some spaghetti disaster like C ***IMHO***
-
-## Helix 🧬
+ ## Helix 🧬
 
 **[Site](https://helix-editor.com/)** | **[Github](https://github.com/helix-editor/helix)**
 
@@ -125,6 +124,8 @@ sk -i -c "rg {} --color=always" --ansi
 
 ### zoxide 🐇
 
+**[Github](https://github.com/ajeetdsouza/zoxide)**
+
 > A smarter `cd` command. Supports all major shells. 
 
 It remembers which directories you use most frequently,
@@ -180,7 +181,7 @@ exa --icons
 
 > Intuitive find & replace CLI (sed alternative).
 
-Not only it's easier, it's also just faster (of course it is)!
+It's just easier and more intuitive.
 
 ```bash
 # Simpler syntax for replacing all occurrences 
@@ -189,7 +190,7 @@ sed s/before/after/g
 
 # Replace newlines with commas
 sd '\n' ','
-sed ':a;N;$!ba;s/\n/,/g'
+sed ':a;N;$!ba;s/\n/,/g' # what is this syntax, seriously...
 ```
 
 ## Misc
@@ -202,3 +203,30 @@ sed ':a;N;$!ba;s/\n/,/g'
 
 It's looks very nice by default
 and provides pretty useful information in a nice format.
+
+### Marky 🏭
+
+**[Github](https://github.com/metfates/marky)**
+
+> Convert Markdown documents into themed HTML pages with support for code syntax highlighting, LaTeX and Mermaid diagrams. 
+
+This is my own app that I use very often.
+
+```bash
+marky README.md
+```
+
+### Gign ⚙️
+
+**[Github](https://github.com/metafates/gign)**
+
+> A cute .gitignore generator
+
+Another app that I developed.
+It allows to generate `.gitignore` files efficiently.
+
+```bash
+# would generate a predefined gitignore template
+# for macOS, JetBrains IDE and python
+gign --append macos jetbrains python
+```
